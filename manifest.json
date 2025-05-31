@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Disable Zoom",
+  "version": "1.0",
+  "description": "Prevents zooming on web pages when enabled.",
+  "permissions": ["scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
